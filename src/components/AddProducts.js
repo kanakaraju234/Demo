@@ -6,7 +6,10 @@ class AddProducts extends Component {
     super(props)
     this.state = {
       productName: '',
-      description: ''
+      description: '',
+      price:'',
+      selector:'ltr'
+
     }
 
     this.handleChange = this.handleChange.bind(this)
@@ -21,13 +24,15 @@ class AddProducts extends Component {
 
   handleSubmit (e) {
     e.preventDefault()
-    const { productName, description } = this.state
-    database.ref('userinfo').push({ productName,description })
+    const { productName, description,price,selector } = this.state
+    database.ref('userinfo').push({ productName,description,price,selector })
     console.log(this.state)
 
     this.setState({
       productName: '',
-      description: ''
+      description: '',
+      price:'',
+      
     })
   }
 
@@ -50,6 +55,23 @@ class AddProducts extends Component {
           onChange={this.handleChange}
           placeholder='product description'
         />
+        <br />
+        <input
+          type='number'
+          name='price'
+          value={this.state.price}
+          onChange={this.handleChange}
+          placeholder='product price'
+        />
+        
+        <select name="selector"
+                   onChange={this.handleChange} 
+                     value={this.state.selector}
+                 >
+                                    <option  value="Kg">Kg</option>
+                                    <option  value="ltr">ltr</option>
+                                    <option value="PerItem" >Per Item</option>
+            </select>
         <br />
         <input type='submit' value='Add Product' />
       </form>

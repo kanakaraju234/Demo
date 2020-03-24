@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import {Route,Switch, Link} from 'react-router-dom'
-import AddProducts from './components/AddProducts'
-
+import AddProducts from './components/AddProducts';
+import Cart from './components/cart';
+import './App.css'
 class App extends Component {
   render() {
     return (
@@ -17,7 +18,7 @@ class App extends Component {
           </Route>
 
           <Route exact path="/cart">
-    {/*<Dcart />*/}
+            <Cart/>
           </Route>
           
           
