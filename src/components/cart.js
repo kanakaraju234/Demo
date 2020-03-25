@@ -18,7 +18,7 @@ import React, { Component } from 'react';
 
         const userinfo = this.props.data.map((user,index)=>{
             return (
-                <tr key={user.id}>
+                <tr key={index}>
                     <td>{user.productName}</td>
                     <td>{user.price}</td>
                     <td><button>AddToCart</button> </td>
