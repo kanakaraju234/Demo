@@ -6,7 +6,7 @@ export function Items(state=[],action){
             return [...state, action.items]
         
         case LOAD_ITEMS:
-            return action.items
+            return action.itemsList
 
             default: return state
     }

@@ -26,8 +26,7 @@ class AddProducts extends Component {
     
     const product = this.state;
 
-    this.props.addItems(product);
-
+    this.props.startAddItems(product);
     this.setState({
       productName: '',
       description: '',
@@ -37,6 +36,8 @@ class AddProducts extends Component {
   }
 
   render () {
+    console.log('..addproducts..')
+    console.log(this.props)
     return (
       <form onSubmit={this.handleSubmit} name='grocery form'>
         <input

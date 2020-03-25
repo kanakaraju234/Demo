@@ -4,6 +4,10 @@ import AddProducts from './components/AddProducts';
 import Cart from './components/cart';
 import './App.css'
 class App extends Component {
+
+  componentDidMount(){
+    this.props.loadingListOfItems()
+  }
   render() {
     console.log(this.props)
     return (
@@ -19,7 +23,7 @@ class App extends Component {
           </Route>
 
           <Route exact path="/cart">
-            <Cart/>
+            <Cart />
           </Route>
           
           
