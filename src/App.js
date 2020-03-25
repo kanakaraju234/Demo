@@ -23,7 +23,7 @@ class App extends Component {
           </Route>
 
           <Route exact path="/cart">
-            <Cart />
+            <Cart data = {this.props.items} />
           </Route>
           
           
