@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import {Route,Switch, Link} from 'react-router-dom'
+import {Route,Switch, Link} from 'react-router-dom';
 import AddProducts from './components/AddProducts';
 import Cart from './components/cart';
 import './App.css'
 class App extends Component {
   render() {
+    console.log(this.props)
     return (
       <div>
         <div>
@@ -14,7 +15,7 @@ class App extends Component {
 
         <Switch>
           <Route exact path="/">
-              <AddProducts />
+              <AddProducts {...this.props} />
           </Route>
 
           <Route exact path="/cart">

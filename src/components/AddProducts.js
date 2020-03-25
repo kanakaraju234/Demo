@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { database } from '../components/firestore'
 
 class AddProducts extends Component {
   constructor (props) {
@@ -24,9 +23,10 @@ class AddProducts extends Component {
 
   handleSubmit (e) {
     e.preventDefault()
-    const { productName, description,price,selector } = this.state
-    database.ref('userinfo').push({ productName,description,price,selector })
-    console.log(this.state)
+    
+    const product = this.state;
+
+    this.props.addItems(product);
 
     this.setState({
       productName: '',
